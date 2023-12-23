@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Diary What Events did I do Today</string>
+    <!--    navigation-->
+    <string name="nav_my_diary">My Diary</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_todo">To Do</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    end navigation-->
+</resources>
