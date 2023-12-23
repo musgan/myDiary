@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -59,5 +61,11 @@ class MainActivity : AppCompatActivity() {
     private fun loadFragmentTodo() {
         ctx.setTitle(R.string.nav_todo)
         setFragment(ToDoFragment())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_bar, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
