@@ -1,11 +1,13 @@
 package com.musgan.mydiary.event.journal.diary.todo
 
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -18,10 +20,11 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var navBottom: BottomNavigationView
     lateinit var ctx: Activity
-
+    var actionBar: androidx.appcompat.app.ActionBar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        actionBar = supportActionBar
         ctx = this
         navBottom = findViewById(R.id.navBottom) as BottomNavigationView
         navBottom.setOnItemSelectedListener {
@@ -52,14 +55,17 @@ class MainActivity : AppCompatActivity() {
     }
     private fun loadFragmentMyDiary() {
         ctx.setTitle(R.string.nav_my_diary)
+        actionBar?.show()
         setFragment(MyDiaryFragment())
     }
     private fun loadFragmentCalendar() {
         ctx.setTitle(R.string.nav_calendar)
+        actionBar?.hide()
         setFragment(CalendarFragment())
     }
     private fun loadFragmentTodo() {
         ctx.setTitle(R.string.nav_todo)
+        actionBar?.show()
         setFragment(ToDoFragment())
     }
 
@@ -67,5 +73,30 @@ class MainActivity : AppCompatActivity() {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_bar, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun openFormAdd() {
+
+    }
+
+    private fun search() {
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.menu_add -> {
+                openFormAdd()
+                true
+            }
+            R.id.menu_search -> {
+                search()
+                true
+            }
+            else -> {
+                false
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
