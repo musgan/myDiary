@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/layout_date_time"
+            android:padding="5dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_title"
+                android:text="Great day in the sun"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_short_desc"
+                android:text="Had a wonderful day with my friends. we meet in the city fir an ice cream and then went to the river"
+                android:textSize="13dp"
+                android:textColor="#666666"
+                android:lineHeight="8pt"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/layout_date_time"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:id="@+id/txt_date_month"
+                android:text="30 JUL"
+                android:textSize="15dp"
+                android:textColor="#085394"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_year"
+                android:textAlignment="center"
+                android:text="2023"
+                android:textSize="15dp"
+                android:textColor="#085394"
+                android:layout_marginBottom="15dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_day_time"
+                android:textAlignment="center"
+                android:text="Rabu, 15:00"
+                android:textSize="13dp"
+                android:textColor="#333333"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:id="@+id/view_tags"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
